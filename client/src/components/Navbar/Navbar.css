@@ -1,0 +1,10 @@
+.navbar {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.logo {
+    width: 200px;
+}

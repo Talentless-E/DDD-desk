@@ -1,0 +1,11 @@
+Model Information:
+* title:	Husky
+* source:	https://sketchfab.com/3d-models/husky-43d07316e0b84900be5a15b2dc5d4d86
+* author:	kamesenlin (https://sketchfab.com/kamesenlin)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Husky" (https://sketchfab.com/3d-models/husky-43d07316e0b84900be5a15b2dc5d4d86) by kamesenlin (https://sketchfab.com/kamesenlin) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

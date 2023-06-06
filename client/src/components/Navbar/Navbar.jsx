@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import DropdownList from "../DropdownList/DropdownList";
+import avatar from "../../assets/avatar.jpg";
 //import './Navbar.css'
 import logo from "../../assets/logo.svg";
 const Navbar = () => {
-   const [login, setLogin] = useState(false);
+   const user = useSelector((state) => state.auth.user)
+   const isLogin = useSelector((state) => state.auth.isLogin);
+   const token = useSelector((state) => state.auth.token);
+   //console.log(user)
    const activeLink =
       "block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500";
    const link =
-      "lock py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700";
+      "block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700";
    return (
       <nav className="bg-white dark:bg-gray-900 sticky w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -15,8 +21,12 @@ const Navbar = () => {
                <img className="fill-current h-10 w-48 mr-2" src={logo} alt="" />
             </NavLink>
             <div className="flex md:order-2">
-               {login ? (
-                  <p onClick={() => setLogin(!login)}>Зарегистрирован!</p>
+               {isLogin ? (
+                  // <DropdownList/>
+                  <div className="flex items-center rounded">
+                     <p className="mr-5 font-medium ">{user.name}</p>
+                     <img className="w-8 h-8" src={avatar} alt=""/>
+                  </div>
                ) : (
                   <Link to="/login">
                      <button
@@ -66,16 +76,21 @@ const Navbar = () => {
                         Главная
                      </NavLink>
                   </li>
-                  <li>
-                     <NavLink
-                        to="/profile/:userId"
-                        className={({ isActive }) =>
-                           isActive ? activeLink : link
-                        }
-                     >
-                        Мой профиль
-                     </NavLink>
-                  </li>
+                  
+                  {isLogin ? (
+                     <li>
+                        <NavLink
+                           to="/profile"
+                           className={({ isActive }) =>
+                              isActive ? activeLink : link
+                           }
+                        >
+                           Мой профиль
+                        </NavLink>
+                     </li>
+                  ) : (
+                     <></>
+                  )}
                </ul>
             </div>
          </div>

@@ -11,15 +11,24 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
+    "@react-three/drei": "^9.66.0",
+    "@react-three/fiber": "^8.12.2",
     "@reduxjs/toolkit": "^1.9.3",
+    "@vkontakte/vk-bridge": "^2.7.2",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.36.0",
+    "flowbite": "^1.6.5",
+    "flowbite-react": "^0.4.4",
+    "gltfjsx": "^6.1.4",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
-    "tailwindcss": "^3.3.0"
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.2",
+    "tailwindcss": "^3.3.0",
+    "three": "^0.151.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
